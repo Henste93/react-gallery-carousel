@@ -120,6 +120,7 @@ const GalleryCarousel = (props, ref) => {
 
   const handleSizeButtonClick = () => {
     setIsMaximized((isMaximized) => !isMaximized);
+    props.onMaximizedChange(!isMaximized);
   };
 
   /* handle UI updates */

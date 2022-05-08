@@ -171,8 +171,9 @@ To customize the carousel, use the following props:
 |shouldMinimizeOnClick    |Boolean               |false        |If true, the carousel can be minimized by clicking.|
 |shouldMinimizeOnSwipeDown|Boolean               |true         |If true, the carousel can be minimized by touch swiping down.|
 |onIndexChange            |Function              |({curIndex, curIndexForDisplay}) => {} |Callback function invoked when the current index of the slides of the carousel is being updated. (Note: it is called regardless of whether index value's before and after are the same. ```curIndex``` is 0-indexed whilst ```curIndexForDisplay``` is 1-indexed)|
-|onSwipeMoveX             |Function              |(displacementX) => {}                |Callback function invoked when the carousel is being swiped in a horizontal swipe. (Note: available from v0.2.0)|
-|onSwipeMoveY             |Function              |(displacementX, displacementY) => {} |Callback function invoked when the carousel is being swiped in a vertical swipe. (Note: available from v0.2.0)|
+|onMaximizedChange        |Function              |({isMaximized}) => {}                  |Callback function invoked when the ```isMaximized``` state is being updated.|
+|onSwipeMoveX             |Function              |(displacementX) => {}                  |Callback function invoked when the carousel is being swiped in a horizontal swipe. (Note: available from v0.2.0)|
+|onSwipeMoveY             |Function              |(displacementX, displacementY) => {}   |Callback function invoked when the carousel is being swiped in a vertical swipe. (Note: available from v0.2.0)|
 |onSwipeEndDown           |Function              |() => {}     |Callback function invoked when the carousel is being swiped in a downward swipe. (Note: available from v0.2.0)|
 |onTap                    |Function              |() => {}     |Callback function invoked when the carousel is being tapped (i.e. from mousedown to mouseup without mousemove, or from touchstart to touchend without touchmove. (Note: available from v0.2.0)|
 |objectFit                |String                |'cover'      |CSS 'object-fit' style to be placed on each image, on the non-maximized carousel.|
