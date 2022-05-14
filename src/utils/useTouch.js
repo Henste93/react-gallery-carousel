@@ -22,11 +22,7 @@ const getTouchDistinguisher = () => {
   }
 
   function isPinch(event) {
-    if (_isPinch(event)) {
-      _recordPinchTouchIdentifiers(event);
-      return true;
-    }
-    return _wasPinch(event);
+    return _isPinch(event);
   }
 
   return { isPinch };
@@ -49,8 +45,6 @@ const useTouch = (elementRef, { onTouchMove, onTouchEnd, onTap }) => {
 
   const shouldOmitEvent = (event, displacementX = 0) => {
     if (
-      // touchDistinguisher only works for iOS from my investigation
-      navigator.platform.match(/iPhone|iPad|iPod|MacIntel/) &&
       touchDistinguisher.isPinch(event)
     )
       return true;

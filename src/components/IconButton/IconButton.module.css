@@ -13,7 +13,9 @@
 
   cursor: pointer;
   user-select: none;
-  touch-action: manipulation;
+  touch-action: none;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 .buttonShadow {
