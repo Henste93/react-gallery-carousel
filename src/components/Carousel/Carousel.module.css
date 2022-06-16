@@ -27,6 +27,10 @@
   align-items: stretch;
 }
 
+.carousel:focus, .maxCarousel:focus {
+  outline: none;
+}
+
 .carouselInner {
   width: 100%;
   height: 100%;
@@ -48,8 +52,4 @@
 
 .gallery {
   background-color: #000;
-}
-
-[data-is-not-keyboard-user='true'] *:focus {
-  outline: none;
 }

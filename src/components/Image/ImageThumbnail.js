@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import NextImage from 'next/image';
 import styles from './Image.module.css';
 import { PLACEHOLDER_IMAGE } from './constants';
 import useIntersectionObserver from '../../utils/useIntersectionObserver';
@@ -43,8 +44,11 @@ LazyLoadedImageThumbnail.propTypes = {
 
 export const ImageThumbnail = (props) => {
   // use the original image as fallback for the thumbnail
-  const src = props.image.thumbnail || props.image.src;
-  const alt = props.image.alt || null;
+  const { src, alt, srcset, thumbnail, ...otherImageProps } = props.image;
+
+  if (thumbnail) {
+    src = thumbnail;
+  }
 
   if (props.shouldLazyLoad)
     return (
@@ -56,13 +60,14 @@ export const ImageThumbnail = (props) => {
     );
 
   return (
-    <img
+    <NextImage
       className={styles.image}
       src={src}
       alt={alt}
       aria-label={alt}
-      loading='auto'
+      layout="responsive"
       onError={handleError}
+      {...otherImageProps}
     />
   );
 };

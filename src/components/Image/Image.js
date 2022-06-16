@@ -1,4 +1,5 @@
 import React, { Fragment, useRef, useState } from 'react';
+import NextImage from 'next/image';
 import styles from './Image.module.css';
 import { PLACEHOLDER_IMAGE } from './constants';
 import { Caption } from '../Widgets';
@@ -88,15 +89,17 @@ export const Image = (props) => {
       style={style}
     />
   ) : (
-    <img
+    <NextImage
       className={styles.image}
       srcSet={srcset}
       src={src}
       alt={alt || null}
-      loading='auto'
       style={style}
+      layout="fill"
+      objectFit="contain"
       onError={handleError}
       {...otherImageProps}
+      priority
     />
   );
 
