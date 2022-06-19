@@ -6,7 +6,7 @@ const useKeys = (elementRef, callbacks) => {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      callbackRef.current[event.key] && callbackRef.current[event.key](event);
+      !event.altKey && callbackRef.current[event.key] && callbackRef.current[event.key](event);
     };
 
     const element = elementRef.current;
