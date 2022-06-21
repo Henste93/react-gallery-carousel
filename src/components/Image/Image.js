@@ -80,7 +80,7 @@ export const Image = (props) => {
   const objectFit = props.objectFit === 'cover' ? null : props.objectFit;
   const style = { objectFit: objectFit };
 
-  const { src, alt, srcset, thumbnail, ...otherImageProps } = props.image;
+  const { src, width, height, alt, srcset, thumbnail, ...otherImageProps } = props.image;
 
   const image = props.shouldLazyLoad ? (
     <LazyLoadedImage
