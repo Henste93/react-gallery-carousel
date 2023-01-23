@@ -50,6 +50,6 @@
   background-color: #000;
 }
 
-[data-is-not-keyboard-user='true'] *:focus {
+/*[data-is-not-keyboard-user='true'] *:focus {
   outline: none;
-}
+}*/
